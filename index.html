@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <nav>
+                <img src="logo_trim.png" class="logo" >
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Service">Service</a></li>
+                    <li><a href="#Portfolio">Portfolio</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Software Engineer</p>
+                 <h1>HI ,I'm <span>Abhinav</span><br>from India</h1>
+            </div>
+        </div>
+    </div>
+     <div id="About">
+        <div class="container">
+            <div class="row">
+                 <div class="about-col-1">
+                    <img src="unnamed.jpg">
+                 </div>
+                 <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills', this)">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience', this)">Experience</p>
+                        <p class="tab-links" onclick="opentab('education', this)">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Desinging Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web App Development</li>
+                            <li><span>App Development</span><br>Building  Android and IOS Apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2026 - Current</span><br>Fullstack Development Training at Metaonus</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022</span><br>B.com from cooperative college</li>
+                        </ul>
+                    </div>
+                 </div>
+            </div>
+        </div>
+     </div>
+     <div id="Service">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="service-list">
+                <div class="service-box">
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>Web Development</h2>
+                    <p>I build responsive and modern websites using HTML, CSS, JavaScript.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fa-solid fa-pen-nib"></i>
+                    <h2>UI/UX Design</h2>
+                    <p>I design clean, user-friendly interfaces for web and mobile apps.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h2>Fullstack Training</h2>
+                    <p>I design clean, user-friendly interfaces for web and mobile apps.</p>
+                </div>
+            </div>
+        </div>
+     </div>
+     <div id="Portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="portfolio-list">
+                <div class="portfolio-item">
+                    <img src="portaaaa.png" alt="Project 1">
+                    <div class="layer">
+                        <h3>Portfolio Website</h3>
+                        <p>Personal responsive portfolio using HTML, CSS & JS</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+     </div>
+
+     <div id="Contact">
+        <div class="container">
+            <h1 class="sub-title">My Contact</h1>
+            <div class="contact-left">
+              
+                <p>  <i class="fa-solid fa-at"></i> <strong>Email:</strong>abhinavvp@hotmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong>8113021038</p>
+                <p><i class="fa-solid fa-location-crosshairs"></i> <strong>Location:</strong>Calicut</p>
+                 <div class="social-icons"> 
+                    <i class="fa-brands fa-linkedin"></i> <a href="#">LinkedIn</a> 
+                    <i class="fa-brands fa-github"></i> <a href="#">GitHub</a> 
+                    <i class="fa-brands fa-instagram"></i> <a href="#">Instagram</a>
+                 </div>
+            </div>
+            <div class="contact-right">
+                <form id="myForm" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea rows="5" name="message" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn">Submit</button>
+                <p id="status"></p>
+                </form>
+            </div>
+        </div>
+     </div>
+     <script>
+document.getElementById("myForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch("https://script.google.com/macros/s/AKfycbzlWT51YNnJ2bHFC2vfXCuAZH--eoaetrAeohrA7xJ_l6SViGx_tFZGPD47JkK2dW0/exec", {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.text())
+  .then(() => {
+    document.getElementById("status").innerText = "Submitted successfully!";
+    document.getElementById("myForm").reset();
+  })
+  .catch(() => {
+    document.getElementById("status").innerText = "Error submitting form";
+  });
+});
+
+
+    function opentab(tabName, element){
+    let tablinks=document.getElementsByClassName("tab-links");
+    let tabcontents=document.getElementsByClassName("tab-contents");
+    for(let link of tablinks){
+        link.classList.remove("active-link");
+    }
+    for(let content of tabcontents){
+        content.classList.remove("active-tab");
+    }
+    element.classList.add("active-link");
+    document.getElementById(tabName).classList.add("active-tab");
+}
+     </script>
+</body>
+</html>
