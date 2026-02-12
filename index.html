@@ -12,7 +12,7 @@
 <body>
     <div class="header">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-none  fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-light bg-none fixed-top">
   <div class="container">
     <a class="navbar-brand " href="#Home">
       <img src="Gemini_Generated_Image_5k30555k30555k30-removebg-preview.png" alt="Logo" height="20">
@@ -32,12 +32,37 @@
 
   </div>
 </nav>
-
-            <div class="header-text text-left">
+<!-- <div id="Home" class="hero">
+         <div class="slider">
+  <img src="choo.jpg" class="slide active">
+  
+  <img src="commonn.jpg" class="slide">
+  <img src="common.png" class="slide">
+</div> -->
+<div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="common - Edited.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="common - Edited.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="Gemini_Generated_Image_5k30555k30555k30-removebg-preview.png" alt="Third slide">
+    </div>
+  </div>
+  
+</div>
+        </div>
+        <div class="header-text text-left">
                 <p>Software Engineer</p>
                  <h1>HI ,I'm <span>Abhinav</span><br>from India</h1>
             </div>
-        </div>
     </div>
      <div id="About">
         <div class="container">
@@ -182,6 +207,21 @@ document.addEventListener("click",function(e){
         bsCollapse.hide();
     }
 });
+
+
+// let index = 0;
+// const slides = document.querySelectorAll(".slide");
+
+// function showSlide() {
+//   slides.forEach(slide => slide.classList.remove("active"));
+//   slides[index].classList.add("active");
+//   index = (index + 1) % slides.length;
+// }
+
+// setInterval(showSlide, 2000);
+
+
+
      </script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
