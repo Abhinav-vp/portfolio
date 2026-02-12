@@ -64,7 +64,7 @@
                  <h1>HI ,I'm <span>Abhinav</span><br>from India</h1>
             </div>
     </div>
-     <div id="About">
+     <div id="About" class="fade">
         <div class="container">
             <div class="row">
                  <div class="about-col-1">
@@ -99,7 +99,7 @@
             </div>
         </div>
      </div>
-     <div id="Service">
+     <div id="Service" class="fade">
         <div class="container">
             <h1 class="sub-title">My Services</h1>
             <div class="service-list">
@@ -121,7 +121,7 @@
             </div>
         </div>
      </div>
-     <div id="Portfolio">
+     <div id="Portfolio" class="fade">
         <div class="container">
             <h1 class="sub-title">My Work</h1>
             <div class="portfolio-list">
@@ -137,7 +137,7 @@
         </div>
      </div>
 
-     <div id="Contact">
+     <div id="Contact" class="fade">
         <div class="container">
             <h1 class="sub-title">My Contact</h1>
             <div class="contact-left">
@@ -207,6 +207,17 @@ document.addEventListener("click",function(e){
         bsCollapse.hide();
     }
 });
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+
 
 
 // let index = 0;

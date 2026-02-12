@@ -141,6 +141,17 @@ h1{
     background-color: black;
 
 }
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .row{
     display: flex;
     justify-content: space-between;
