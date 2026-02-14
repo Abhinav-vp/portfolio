@@ -121,36 +121,43 @@
             </div>
         </div>
      </div>
-     <div id="Project" class="fade bg-black">
+     <div id="Portfolio" class="fade bg-black">
   <div class="container">
-    <h1 class="sub-title text-center mb-5">My Project</h1>
+    <h1 class="sub-title text-center mb-5">My Projects</h1>
 
     <div class="row g-4 justify-content-center">
-      
+
+      <!-- Calculator -->
       <div class="col-12 col-sm-6 col-lg-4">
-        <div class="project-card">
-          <img src="calc.webp" alt="Calculator">
+        <div class="project-card"
+             data-bs-toggle="modal"
+             data-bs-target="#calculatorModal"
+             style="cursor:pointer;">
+          <img src="calc.webp" alt="Calculator" class="img-fluid">
           <p>Calculator</p>
         </div>
       </div>
 
+      <!-- Todo -->
       <div class="col-12 col-sm-6 col-lg-4">
         <div class="project-card">
-          <img src="tudo.jpg" alt="Tudo">
-          <p>Tudo List</p>
+          <img src="tudo.jpg" alt="Todo" class="img-fluid">
+          <p>Todo List</p>
         </div>
       </div>
 
+      <!-- Weather -->
       <div class="col-12 col-sm-6 col-lg-4">
         <div class="project-card">
-          <img src="whethu.png" alt="Whether">
-          <p>Whether</p>
+          <img src="whethu.png" alt="Weather" class="img-fluid">
+          <p>Weather</p>
         </div>
       </div>
 
     </div>
   </div>
 </div>
+
 
      <div id="Portfolio" class="fade">
         <div class="container">
@@ -250,6 +257,28 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll(".fade").forEach(el => observer.observe(el));
 
      </script>
+     <div class="modal fade" id="calculatorModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg" style="display: flex; justify-content: center;">
+    <div class="modal-content" style="width: 60%;">
+
+      <!-- Header -->
+      <div class="modal-header ">
+        <h5 class="modal-title ">Calculator</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Body -->
+      <!-- <div class="modal-body">
+        <p>This is your calculator popup.</p> -->
+
+        <!-- OPTIONAL: Load calculator file -->
+         <iframe src="Calculator/Calculator.html" width="100%" height="730" style="border:none;"></iframe>
+      </div>
+
+    </div>
+  </div>
+</div>
+
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
